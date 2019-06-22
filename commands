@@ -1,0 +1,3 @@
+mkvirtualenvwrapper - create a new virtualenv desk
+deactivate - exit from virtualenv
+lsvirtualenv -l - list of all virtualenv desks
