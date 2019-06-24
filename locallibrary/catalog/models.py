@@ -13,6 +13,7 @@ class Book(models.Model):
     # Foreign Key used because book can only have one author, but authors can have 
     # multiple books
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
+    language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True)
 
     summary = models.TextField(max_length=1000, help_text='Enter a brief description')
     isbn = models.CharField('ISBN', max_length=13)
@@ -66,3 +67,9 @@ class Author(models.Model):
 
     def __str__(self):
         return f'{self.last_name}, {self.first_name}'
+
+class Language(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
